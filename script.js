@@ -21,14 +21,24 @@ window.addEventListener("click", (e) =>
 //All related to image carousel
 
 let slideIndex = 1;
+const dots = document.querySelectorAll(".dot");
 showSlides(slideIndex);
 
 document.querySelector(".prev").addEventListener("click", () => plusSlides(-1));
 document.querySelector(".next").addEventListener("click", () => plusSlides(1));
+dots.forEach(() => addEventListener("click", (e) => currentSlide(parseInt(e.target.dataset.number))));
 
 function plusSlides(n)
 {
 	showSlides(slideIndex += n);
+}
+
+function currentSlide(n) 
+{
+	if (isNaN(n))
+		return;
+	slideIndex = n;
+	showSlides(n);
 }
 
 function showSlides(n)
