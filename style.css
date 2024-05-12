@@ -39,3 +39,13 @@
 }
 
 /*Related all to image carousel*/
+
+img
+{
+	width: 100%;
+}
+
+a
+{
+	cursor: pointer;
+}
